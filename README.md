@@ -68,3 +68,6 @@ example/
 │   └──index.html
 └── index.js
 ```
+
+## LICENSE
+[MIT](LICENSE)
