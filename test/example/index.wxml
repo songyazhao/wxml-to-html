@@ -1,0 +1,3 @@
+<view id="detail">
+  我是<text class="text">index.wxml</text>
+</view>

@@ -1,0 +1,15 @@
+node_modules/
+docs/
+src/
+test/
+public/
+.idea/
+.babelrc
+.eslintrc.js
+.gitignore
+.npmignore
+.postcssrc
+.npmrc
+babel.config.js
+vue.config.js
+yarn.lock
