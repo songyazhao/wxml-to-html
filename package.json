@@ -10,6 +10,16 @@
   "scripts": {
     "test": "rimraf test/dist && mocha test/index.js"
   },
+  "keywords": [
+    "wxml",
+    "transform",
+    "wxml-to-html",
+    "mini-program"
+  ],
+  "bugs": {
+    "url": "https://github.com/songyazhao/wxml-to-html/issues"
+  },
+  "homepage": "https://github.com/songyazhao/wxml-to-html#readme",
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
