@@ -72,8 +72,14 @@ example/
 ## API
 `wxmlToHtml(sourcePath, savePath, [options])`
 
+### sourcePath
+要查找的目录
+
+### savePath
+转换完成后输出的文件保存路径
+
 ### options
-- extension: 要查找的后缀，支持正则表达式，`default: 'wxml'`
+- extension: 要查找的文件后缀，支持正则表达式，`default: 'wxml'`
 - outExtension: 最终输出的文件格式，`default: 'html'`
 - rawDirectory: 是否保持原文件一样的目录结构输出, `default: false`
 

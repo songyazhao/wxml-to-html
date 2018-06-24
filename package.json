@@ -1,6 +1,6 @@
 {
   "name": "wxml-to-html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "微信小程序wxml文件批量转html",
   "main": "index.js",
   "repository": "git@github.com:songyazhao/wxml-to-html.git",
