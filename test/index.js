@@ -3,9 +3,9 @@ const assert = require('chai').assert
 const wxmlToHtml = require('../index.js')
 
 const path = require('path')
-const sourcePath = path.resolve(__dirname, '../pages')
-const savePath = path.resolve(__dirname, '../public')
-const options = { ext: 'wxml', outExt: 'html', rawPath: true }
+const sourcePath = path.resolve(__dirname, './pages')
+const savePath = path.resolve(__dirname, './dist')
+const options = { extension: 'wxml', outExtension: 'html', rawDirectory: true }
 
 describe('module:wxml-to-html', () => {
   it('export', () => {
@@ -13,14 +13,25 @@ describe('module:wxml-to-html', () => {
   })
 
   describe('feature:wxml-to-html', () => {
-    it('have options', async () => {
+    it('exist options', async () => {
       let html = await wxmlToHtml(sourcePath, savePath, options)
-      assert.isTrue(Array.isArray(html) && html.length > 0, `"options" error`)
+      assert.isTrue(
+        Array.isArray(html) && html.length > 0,
+        `转换失败，
+        sourcePaht：${sourcePath}，
+        savePath：${savePath}，
+        options：${options}`
+      )
     })
 
-    it('not have options', async () => {
+    it('not exist options', async () => {
       let html = await wxmlToHtml(sourcePath, savePath)
-      assert.isTrue(Array.isArray(html) && html.length > 0, `transform failed`)
+      assert.isTrue(
+        Array.isArray(html) && html.length > 0,
+        `转换失败，
+        sourcePaht：${sourcePath}，
+        savePath：${savePath}`
+      )
     })
   })
 })

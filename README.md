@@ -18,7 +18,7 @@ example/
 │   ├── detail/
 │   │   └── detail.wxml/
 │   └──index.wxml
-├── public/
+├── dist/
 └── index.js
 ```
 
@@ -27,11 +27,11 @@ example/
 const wxmlToHtml = require('wxml-to-html')
 const path = require('path')
 const sourcePath = path.resolve(__dirname, './pages')
-const savePath = path.resolve(__dirname, './public')
+const savePath = path.resolve(__dirname, './dist')
 const options = {
-  ext: 'wxml', // 要查找的后缀
-  outExt: 'html', // 输出的文件格式
-  rawPath: true // 是否保持原文件结构
+  extension: 'wxml', // 要查找的后缀
+  outExtension: 'html', // 输出的文件格式
+  rawDirectory: true // 是否保持原文件一样的目录结构输出
 }
 
 // Promise
@@ -40,18 +40,18 @@ wxmlToHtml(sourcePath, savePath, options)
     console.log(`success: ${savePaths}`)
   })
   .catch(err => {
-    console.error(`Failed output file: ${err}`)
+    console.error(`output file failed: ${err}`)
   })
 
 // Or Async
-(async () => {
+async () => {
   try {
     const savePaths = await wxmlToHtml(sourcePath, savePath, options)
     console.log(`success: ${savePaths}`)
   } catch (err) {
-    console.error(`Failed output file: ${err}`)
+    console.error(`output file failed: ${err}`)
   }
-})()
+}
 ```
 
 Transform after:
@@ -62,7 +62,7 @@ example/
 │   ├── detail/
 │   │   └── detail.wxml/
 │   └──index.wxml
-├── public/
+├── dist/
 │   ├── detail/
 │   │   └── detail.html/
 │   └──index.html
