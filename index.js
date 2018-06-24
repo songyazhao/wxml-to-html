@@ -9,7 +9,7 @@ module.exports = async (sourcePath, savePath, options = {}) => {
 
   if (!extension) extension = 'wxml'
   if (!outExtension) outExtension = 'html'
-  if (!rawDirectory) rawDirectory = true
+  if (!rawDirectory) rawDirectory = false
 
   const sourceDir = path.isAbsolute(sourcePath) ? sourcePath : resolve(sourcePath)
   const saveDir = path.isAbsolute(savePath) ? savePath : resolve(savePath)
@@ -19,7 +19,7 @@ module.exports = async (sourcePath, savePath, options = {}) => {
     const wxmlCon = await fs.readFile(src, 'utf-8')
     const newWxmlCon = toHtml(wxmlCon)
     const suffixPath = src.replace(sourcePath, '').replace(extension, outExtension)
-    const savePath = rawDirectory ? path.join(saveDir, suffixPath) : path.join(saveDir, path.basename(suffixPath))
+    const savePath = rawDirectory ? path.join(saveDir, path.basename(suffixPath)) : path.join(saveDir, suffixPath)
 
     // 确保目录存在，否则创建
     await fs.ensureDir(path.dirname(savePath))

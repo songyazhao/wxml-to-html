@@ -30,7 +30,7 @@ const sourcePath = path.resolve(__dirname, './pages')
 const savePath = path.resolve(__dirname, './dist')
 const options = {
   extension: 'wxml', // 要查找的后缀
-  outExtension: 'html', // 输出的文件格式
+  outExtension: 'txt', // 输出的文件格式
   rawDirectory: true // 是否保持原文件一样的目录结构输出
 }
 
@@ -68,6 +68,14 @@ example/
 │   └──index.html
 └── index.js
 ```
+
+## API
+`wxmlToHtml(sourcePath, savePath, [options])`
+
+### options
+- extension: 要查找的后缀，支持正则表达式，`default: 'wxml'`
+- outExtension: 最终输出的文件格式，`default: 'html'`
+- rawDirectory: 是否保持原文件一样的目录结构输出, `default: false`
 
 ## LICENSE
 [MIT](LICENSE)
