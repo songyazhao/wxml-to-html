@@ -61,11 +61,10 @@ example/
 ├── pages/
 │   ├── detail/
 │   │   └── detail.wxml/
-│   └──index.wxml
+│   └── index.wxml
 ├── dist/
-│   ├── detail/
-│   │   └── detail.html/
-│   └──index.html
+│   ├── detail.html
+│   └── index.html
 └── index.js
 ```
 
